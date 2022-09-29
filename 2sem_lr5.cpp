@@ -39,7 +39,7 @@ void invert(string s) {
     //цикл для вывода текста в обратном порядке
     while (!file_string.empty()) {
 
-        //переносим в буферную строку последний элемент стека
+        //достаем из вершины стека элемент и заносим в буферную строку
         buffer = file_string.top();
 
         //вывод
@@ -55,7 +55,7 @@ int main()
     SetConsoleCP(1251);
     setlocale(LC_ALL, "");
     string file;
-    ifstream input("test.txt");
+    ifstream input("input.txt");
 
     cout << "Исходный текст:" << endl;
 
@@ -68,8 +68,10 @@ int main()
 
     input.close();
     cout << endl << "Вывод текста в обратном порядке:" << endl;
+
     //вызов функции
     invert(file);
+
     cout << endl;
     return 0;
 }
